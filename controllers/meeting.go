@@ -2,7 +2,6 @@ package controllers
 
 import (
 	// "encoding/json"
-	"fmt"
 	"github.com/bigbluebutton/api-labs/models"
 
 	"github.com/astaxie/beego"
