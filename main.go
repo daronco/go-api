@@ -1,11 +1,11 @@
 package main
 
 import (
-	_ "github.com/bigbluebutton/api-labs/docs"
-	_ "github.com/bigbluebutton/api-labs/routers"
+	_ "github.com/bigbluebutton/go-api/docs"
+	_ "github.com/bigbluebutton/go-api/routers"
 
 	"github.com/astaxie/beego"
-	"github.com/bigbluebutton/api-labs/lib/redispubsub"
+	"github.com/bigbluebutton/go-api/lib/redispubsub"
 )
 
 func main() {

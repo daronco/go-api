@@ -2,7 +2,7 @@ package controllers
 
 import (
 	// "encoding/json"
-	"github.com/bigbluebutton/api-labs/models"
+	"github.com/bigbluebutton/go-api/models"
 
 	"github.com/astaxie/beego"
 )

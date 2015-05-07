@@ -8,7 +8,7 @@
 package routers
 
 import (
-	"github.com/bigbluebutton/api-labs/controllers"
+	"github.com/bigbluebutton/go-api/controllers"
 
 	"github.com/astaxie/beego"
 )
