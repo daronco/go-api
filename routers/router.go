@@ -1,16 +1,15 @@
 // @APIVersion 1.0.0
-// @Title beego Test API
-// @Description beego has a very cool tools to autogenerate documents for your API
-// @Contact astaxie@gmail.com
-// @TermsOfServiceUrl http://beego.me/
-// @License Apache 2.0
-// @LicenseUrl http://www.apache.org/licenses/LICENSE-2.0.html
+// @Title BigBlueButton Go API
+// @Description Test API in Go for BigBlueButton
+// @Contact invalid@bigbluebutton.org
+// @TermsOfServiceUrl http://bigbluebutton.org/
+// @License ?
+// @LicenseUrl ?
 package routers
 
 import (
-	"github.com/bigbluebutton/go-api/controllers"
-
 	"github.com/astaxie/beego"
+	"github.com/bigbluebutton/go-api/controllers"
 )
 
 func init() {

@@ -2,7 +2,7 @@ package messages
 
 import (
 	"encoding/json"
-	"fmt"
+	// "fmt"
 )
 
 type MessageHeader struct {
@@ -29,4 +29,24 @@ type MeetingCreatedPayload struct {
 type MeetingCreatedMessage struct {
 	Header  MessageHeader         `json:"header"`
 	Payload MeetingCreatedPayload `json:"payload"`
+}
+
+func Parse(event []byte) (interface{}, error) {
+
+	// TODO: find the type of message by reading event's header
+
+	deserialized := &MeetingCreatedMessage{}
+	err := json.Unmarshal(event, &deserialized)
+
+	if err != nil {
+		return nil, err
+	} else {
+		return Map(deserialized)
+	}
+}
+
+func Map(message interface{}) (interface{}, error) {
+	// TODO: convert message to a model
+
+	return nil, nil
 }
