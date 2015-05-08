@@ -17,7 +17,7 @@ type MeetingController struct {
 // @Success 200 {object} models.Meeting
 // @router / [get]
 func (this *MeetingController) GetAll() {
-	obs := models.GetAll()
+	obs := models.GetAllMeetings()
 	this.Data["json"] = obs
 	this.ServeJson()
 }
@@ -31,7 +31,7 @@ func (this *MeetingController) GetAll() {
 func (this *MeetingController) Get() {
 	meetingId := this.GetString(":meetingId")
 	if meetingId != "" {
-		meeting, err := models.Get(meetingId)
+		meeting, err := models.GetMeeting(meetingId)
 		if err != nil {
 			this.Data["json"] = err
 		} else {
