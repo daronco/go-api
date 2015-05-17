@@ -1,9 +1,7 @@
 package controllers
 
 import (
-	// "encoding/json"
-	"github.com/bigbluebutton/go-api/models"
-
+	"github.com/bigbluebutton/go-api/lib/bridge"
 	"github.com/astaxie/beego"
 )
 
@@ -17,8 +15,7 @@ type MeetingController struct {
 // @Success 200 {object} models.Meeting
 // @router / [get]
 func (this *MeetingController) GetAll() {
-	obs := models.GetAllMeetings()
-	this.Data["json"] = obs
+	this.Data["json"] = nil //bridge.GetAllMeetings()
 	this.ServeJson()
 }
 
@@ -31,7 +28,7 @@ func (this *MeetingController) GetAll() {
 func (this *MeetingController) Get() {
 	meetingId := this.GetString(":meetingId")
 	if meetingId != "" {
-		meeting, err := models.GetMeeting(meetingId)
+		meeting, err := bridge.GetMeeting(meetingId)
 		if err != nil {
 			this.Data["json"] = err
 		} else {

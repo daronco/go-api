@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"github.com/astaxie/beego"
 	"github.com/bigbluebutton/go-api/lib/bridge"
-	"github.com/bigbluebutton/go-api/models"
+	// "github.com/bigbluebutton/go-api/models"
 )
 
 func main() {
@@ -19,11 +19,11 @@ func main() {
 	bridge.Start()
 	defer bridge.Stop()
 
-	meeting := models.Meeting{"meeting1", "My Meeting", ""}
-	result, err := meeting.Save()
-	fmt.Printf("result: %v\n", result)
-	fmt.Printf("error: %v\n", err)
-	fmt.Printf("--- addMeeting ok")
+	// meeting := models.Meeting{"meeting1", "My Meeting", ""}
+	// result, err := meeting.Save()
+	// fmt.Printf("result: %v\n", result)
+	// fmt.Printf("error: %v\n", err)
+	// fmt.Printf("--- addMeeting ok")
 
 	beego.Run()
 	fmt.Printf("--- run ok")

@@ -2,6 +2,7 @@ package messages
 
 import (
 	"encoding/json"
+	"github.com/bigbluebutton/go-api/models"
 	// "fmt"
 )
 
@@ -33,7 +34,7 @@ type MeetingCreatedMessage struct {
 
 func Parse(event []byte) (interface{}, error) {
 
-	// TODO: find the type of message by reading event's header
+	// TODO: find the type of message by reading event's header and use the correct struct
 
 	deserialized := &MeetingCreatedMessage{}
 	err := json.Unmarshal(event, &deserialized)
@@ -41,12 +42,11 @@ func Parse(event []byte) (interface{}, error) {
 	if err != nil {
 		return nil, err
 	} else {
-		return Map(deserialized)
+		return deserialized, nil
 	}
 }
 
-func Map(message interface{}) (interface{}, error) {
-	// TODO: convert message to a model
-
-	return nil, nil
+func (this *MeetingCreatedMessage) ToMeeting() (models.Meeting) {
+	// TODO: temporary
+	return models.Meeting{"meeting1", "My Meeting", ""}
 }
